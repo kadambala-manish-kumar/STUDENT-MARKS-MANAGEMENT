@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="CSS/UserUpdate.css">
+  <style type="text/css">
+    
+body {
+  
+font-family: Agency FB;
+}
+
+
+  </style>
+
+
+<script>
+  
+function ValidateContactForm()
+{
+
+ 
+    var Name=ContactForm.Name;
+    var Pass=ContactForm.Password;
+    var Email=ContactForm.Email;
+    var Phone=ContactForm.Phone;
+    var Address=ContactForm.Address
+
+
+    if (Name.value=="") 
+    {
+      window.alert("Enter Your Name");
+      Email.focus();
+      return false;
+    }
+
+   if (Pass.value=="") 
+    {
+      window.alert("Enter Password");
+      Pass.focus();
+      return false;
+    }
+
+
+    if (Email.value=="") 
+    {
+      window.alert("Enter Your Email");
+      Email.focus();
+      return false;
+    }
+
+   if (!validateCaseSensitiveEmail(Email.value))
+    {
+        window.alert("Please enter a valid e-mail address.");
+        email.focus();
+        return false;
+    }
+   if (Phone.value=="") 
+    {
+      window.alert("Enter Your Phone Number");
+      Email.focus();
+      return false;
+    }
+    
+    return true;
+
+}
+function validateCaseSensitiveEmail(email) 
+{ 
+ var reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+ if (reg.test(email)){
+ return true; 
+}
+ else{
+ return false;
+ } 
+} 
+
+</script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Update Profile</h2>
+  <form class="login-container" method="post" action="" name="ContactForm" onsubmit="return ValidateContactForm();">
+
+     <p><input type="text" name="Name" placeholder="Your Name"value=""></p>
+    <p><input type="password" placeholder="New Password" name="Password"></p>
+    <p><input type="Email" name="Email" placeholder="Your Email" value=""></p>
+    <p><input type="text" name="Phone" placeholder="Your Phone Number"value=""></p>
+    <p><input type="text" name="Address" placeholder="Your Address" value=""></p>
+
+    <p><input type="submit" value="Update Now"></p>
+  </form>
+</div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
